@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="Wf8X7ZQLqYSEHtF1JpHYe4kUpjocgNyCvmxvQJ8o">
+
+        <title>FenixHub  - </title>
+        <meta name="description" content="">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="/css/app.css">
+
+        <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+
+        <!-- Scripts -->
+        <script src="/js/app.js" defer></script>
+    </head>
+    <body class="font-sans antialiased">
+         <div x-data="{&quot;show&quot;:true,&quot;style&quot;:&quot;success&quot;,&quot;message&quot;:null}"
+            :class="{ 'bg-indigo-500': style == 'success', 'bg-red-700': style == 'danger' }"
+            x-show="show && message"
+            x-init="
+                document.addEventListener('banner-message', event => {
+                    style = event.detail.style;
+                    message = event.detail.message;
+                    show = true;
+                });
+            ">
+    <div class="max-w-screen-xl mx-auto py-2 px-3 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between flex-wrap">
+            <div class="w-0 flex-1 flex items-center min-w-0">
+                <span class="flex p-2 rounded-lg" :class="{ 'bg-indigo-600': style == 'success', 'bg-red-600': style == 'danger' }">
+                    <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </span>
+
+                <p class="ml-3 font-medium text-sm text-white truncate" x-text="message"></p>
+            </div>
+
+            <div class="flex-shrink-0 sm:ml-3">
+                <button
+                    type="button"
+                    class="-mr-1 flex p-2 rounded-md focus:outline-none sm:-mr-2 transition ease-in-out duration-150"
+                    :class="{ 'hover:bg-indigo-600 focus:bg-indigo-600': style == 'success', 'hover:bg-red-600 focus:bg-red-600': style == 'danger' }"
+                    aria-label="Dismiss"
+                    x-on:click="show = false">
+                    <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+
+        <div class="min-h-screen bg-gray-100">
+            <nav wire:id="hNiteJMnxaJJ43cvYen3" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;hNiteJMnxaJJ43cvYen3&quot;,&quot;name&quot;:&quot;navigation-menu&quot;,&quot;locale&quot;:&quot;en&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[&quot;refresh-navigation-menu&quot;]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;ee4a2567&quot;,&quot;data&quot;:[],&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;9297dec5868ad0994c5a79d63b75a4f31d50593fed5e4284db8690bea8e58f1c&quot;}}" x-data="{ open: false }" class="bg-white border-b border-gray-100">
+    <!-- Primary Navigation Menu -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="http://fenixhub.test/dashboard">
+                         <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="block h-9 w-auto">
+  <path d="M11.395 44.428C4.557 40.198 0 32.632 0 24 0 10.745 10.745 0 24 0a23.891 23.891 0 0113.997 4.502c-.2 17.907-11.097 33.245-26.602 39.926z" fill="#6875F5"/>
+  <path d="M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z" fill="#6875F5"/>
+</svg>
+ 
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                     <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="http://fenixhub.test/dashboard">
+    Dashboard
+</a>
+ 
+                </div>
+            </div>
+
+            <div class="hidden sm:flex sm:items-center sm:ml-6">
+                <!-- Teams Dropdown -->
+                                    <div class="ml-3 relative">
+                         <div class="relative" x-data="{ open: false }" @click.away="open = false" @close.stop="open = false">
+    <div @click="open = ! open">
+        <span class="inline-flex rounded-md">
+                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
+                                        Hristo&#039;s Team
+
+                                        <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </span>
+    </div>
+
+    <div x-show="open"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="transform opacity-0 scale-95"
+            x-transition:enter-end="transform opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-75"
+            x-transition:leave-start="transform opacity-100 scale-100"
+            x-transition:leave-end="transform opacity-0 scale-95"
+            class="absolute z-50 mt-2 60 rounded-md shadow-lg origin-top-right right-0"
+            style="display: none;"
+            @click="open = false">
+        <div class="rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white">
+            <div class="w-60">
+                                    <!-- Team Management -->
+                                    <div class="block px-4 py-2 text-xs text-gray-400">
+                                        Manage Team
+                                    </div>
+
+                                    <!-- Team Settings -->
+                                     <a class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" href="http://fenixhub.test/teams/1">Team Settings</a>
+ 
+
+                                                                             <a class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" href="http://fenixhub.test/teams/create">Create New Team</a>
+ 
+                                    
+                                    <div class="border-t border-gray-100"></div>
+
+                                    <!-- Team Switcher -->
+                                    <div class="block px-4 py-2 text-xs text-gray-400">
+                                        Switch Teams
+                                    </div>
+
+                                                                             <form method="POST" action="http://fenixhub.test/current-team">
+    <input type="hidden" name="_method" value="PUT">    <input type="hidden" name="_token" value="Wf8X7ZQLqYSEHtF1JpHYe4kUpjocgNyCvmxvQJ8o">
+    <!-- Hidden Team ID -->
+    <input type="hidden" name="team_id" value="1">
+
+     <a class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" href="#" onclick="event.preventDefault(); this.closest(&#039;form&#039;).submit();"><div class="flex items-center">
+                            <svg class="mr-2 h-5 w-5 text-green-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            
+            <div class="truncate">Hristo&#039;s Team</div>
+        </div></a>
+  
+</form>
+ 
+                                                                    </div>
+        </div>
+    </div>
+</div>
+ 
+                    </div>
+                
+                <!-- Settings Dropdown -->
+                <div class="ml-3 relative">
+                     <div class="relative" x-data="{ open: false }" @click.away="open = false" @close.stop="open = false">
+    <div @click="open = ! open">
+        <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
+                                    <img class="h-8 w-8 rounded-full object-cover" src="http://fenixhub.test/storage/profile-photos/Ys7Xnoqk8LdTuBP7gm053LEEFIy6wlVg17O9IrZE.png" alt="Hristo Hinkins" />
+                                </button>
+    </div>
+
+    <div x-show="open"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="transform opacity-0 scale-95"
+            x-transition:enter-end="transform opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-75"
+            x-transition:leave-start="transform opacity-100 scale-100"
+            x-transition:leave-end="transform opacity-0 scale-95"
+            class="absolute z-50 mt-2 w-48 rounded-md shadow-lg origin-top-right right-0"
+            style="display: none;"
+            @click="open = false">
+        <div class="rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white">
+            <!-- Account Management -->
+                            <div class="block px-4 py-2 text-xs text-gray-400">
+                                Manage Account
+                            </div>
+
+                             <a class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" href="http://fenixhub.test/user/profile">Profile</a>
+ 
+
+                                                             <a class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" href="http://fenixhub.test/user/api-tokens">API Tokens</a>
+ 
+                            
+                            <div class="border-t border-gray-100"></div>
+
+                            <!-- Authentication -->
+                            <form method="POST" action="http://fenixhub.test/logout">
+                                <input type="hidden" name="_token" value="Wf8X7ZQLqYSEHtF1JpHYe4kUpjocgNyCvmxvQJ8o">
+                                 <a class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" href="http://fenixhub.test/logout" onclick="event.preventDefault();
+                                                this.closest('form').submit();">Logout</a>
+ 
+                            </form>
+        </div>
+    </div>
+</div>
+ 
+                </div>
+            </div>
+
+            <!-- Hamburger -->
+            <div class="-mr-2 flex items-center sm:hidden">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive Navigation Menu -->
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+        <div class="pt-2 pb-3 space-y-1">
+             <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://fenixhub.test/dashboard">
+    Dashboard
+</a>
+ 
+        </div>
+
+        <!-- Responsive Settings Options -->
+        <div class="pt-4 pb-1 border-t border-gray-200">
+            <div class="flex items-center px-4">
+                                    <div class="flex-shrink-0 mr-3">
+                        <img class="h-10 w-10 rounded-full object-cover" src="http://fenixhub.test/storage/profile-photos/Ys7Xnoqk8LdTuBP7gm053LEEFIy6wlVg17O9IrZE.png" alt="Hristo Hinkins" />
+                    </div>
+                
+                <div>
+                    <div class="font-medium text-base text-gray-800">Hristo Hinkins</div>
+                    <div class="font-medium text-sm text-gray-500">hhinkin@gmail.com</div>
+                </div>
+            </div>
+
+            <div class="mt-3 space-y-1">
+                <!-- Account Management -->
+                 <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://fenixhub.test/user/profile">
+    Profile
+</a>
+ 
+
+                                     <a class="block pl-3 pr-4 py-2 border-l-4 border-indigo-400 text-base font-medium text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 transition duration-150 ease-in-out" href="http://fenixhub.test/user/api-tokens">
+    API Tokens
+</a>
+ 
+                
+                <!-- Authentication -->
+                <form method="POST" action="http://fenixhub.test/logout">
+                    <input type="hidden" name="_token" value="Wf8X7ZQLqYSEHtF1JpHYe4kUpjocgNyCvmxvQJ8o">
+                     <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://fenixhub.test/logout" onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+    Logout
+</a>
+ 
+                </form>
+
+                <!-- Team Management -->
+                                    <div class="border-t border-gray-200"></div>
+
+                    <div class="block px-4 py-2 text-xs text-gray-400">
+                        Manage Team
+                    </div>
+
+                    <!-- Team Settings -->
+                     <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://fenixhub.test/teams/1">
+    Team Settings
+</a>
+ 
+
+                                             <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="http://fenixhub.test/teams/create">
+    Create New Team
+</a>
+ 
+                    
+                    <div class="border-t border-gray-200"></div>
+
+                    <!-- Team Switcher -->
+                    <div class="block px-4 py-2 text-xs text-gray-400">
+                        Switch Teams
+                    </div>
+
+                                             <form method="POST" action="http://fenixhub.test/current-team">
+    <input type="hidden" name="_method" value="PUT">    <input type="hidden" name="_token" value="Wf8X7ZQLqYSEHtF1JpHYe4kUpjocgNyCvmxvQJ8o">
+    <!-- Hidden Team ID -->
+    <input type="hidden" name="team_id" value="1">
+
+     <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="#" onclick="event.preventDefault(); this.closest(&#039;form&#039;).submit();">
+    <div class="flex items-center">
+                            <svg class="mr-2 h-5 w-5 text-green-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            
+            <div class="truncate">Hristo&#039;s Team</div>
+        </div>
+</a>
+  
+</form>
+ 
+                                                </div>
+        </div>
+    </div>
+</nav>
+
+            <!-- Page Heading -->
+            <header class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            API Tokens
+        </h2>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main>
+                <div>
+        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+            <div wire:id="RfrKvOvdpBfZb9Wa2GM9" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;RfrKvOvdpBfZb9Wa2GM9&quot;,&quot;name&quot;:&quot;api.api-token-manager&quot;,&quot;locale&quot;:&quot;en&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;f6b9cb9c&quot;,&quot;data&quot;:{&quot;createApiTokenForm&quot;:{&quot;name&quot;:&quot;&quot;,&quot;permissions&quot;:[&quot;read&quot;]},&quot;displayingToken&quot;:false,&quot;plainTextToken&quot;:null,&quot;managingApiTokenPermissions&quot;:false,&quot;managingPermissionsFor&quot;:null,&quot;updateApiTokenForm&quot;:{&quot;permissions&quot;:[]},&quot;confirmingApiTokenDeletion&quot;:false,&quot;apiTokenIdBeingDeleted&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;471d7b5e178927fc4c16e234fa7d53e2d7152a268bc09e7a35636dfad018e0f6&quot;}}">
+    <!-- Generate API Token -->
+     <div class="md:grid md:grid-cols-3 md:gap-6">
+     <div class="md:col-span-1">
+    <div class="px-4 sm:px-0">
+        <h3 class="text-lg font-medium text-gray-900">Create API Token</h3>
+
+        <p class="mt-1 text-sm text-gray-600">
+            API tokens allow third-party services to authenticate with our application on your behalf.
+        </p>
+    </div>
+</div>
+ 
+
+    <div class="mt-5 md:mt-0 md:col-span-2">
+        <form wire:submit.prevent="createApiToken">
+            <div class="shadow overflow-hidden sm:rounded-md">
+                <div class="px-4 py-5 bg-white sm:p-6">
+                    <div class="grid grid-cols-6 gap-6">
+                        <!-- Token Name -->
+            <div class="col-span-6 sm:col-span-4">
+                 <label class="block font-medium text-sm text-gray-700" for="name">
+    Token Name
+</label>
+ 
+                 <input  class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="name" type="text" wire:model.defer="createApiTokenForm.name" autofocus="autofocus">
+ 
+                  
+            </div>
+
+            <!-- Token Permissions -->
+                            <div class="col-span-6">
+                     <label class="block font-medium text-sm text-gray-700" for="permissions">
+    Permissions
+</label>
+ 
+
+                    <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                    <label class="flex items-center">
+                                 <input type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" wire:model.defer="createApiTokenForm.permissions" value="create">
+ 
+                                <span class="ml-2 text-sm text-gray-600">create</span>
+                            </label>
+                                                    <label class="flex items-center">
+                                 <input type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" wire:model.defer="createApiTokenForm.permissions" value="delete">
+ 
+                                <span class="ml-2 text-sm text-gray-600">delete</span>
+                            </label>
+                                                    <label class="flex items-center">
+                                 <input type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" wire:model.defer="createApiTokenForm.permissions" value="read">
+ 
+                                <span class="ml-2 text-sm text-gray-600">read</span>
+                            </label>
+                                                    <label class="flex items-center">
+                                 <input type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" wire:model.defer="createApiTokenForm.permissions" value="update">
+ 
+                                <span class="ml-2 text-sm text-gray-600">update</span>
+                            </label>
+                                            </div>
+                </div>
+                    </div>
+                </div>
+
+                                    <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
+                        <div x-data="{ shown: false, timeout: null }"
+    x-init="window.livewire.find('RfrKvOvdpBfZb9Wa2GM9').on('created', () => { clearTimeout(timeout); shown = true; timeout = setTimeout(() => { shown = false }, 2000);  })"
+    x-show.transition.opacity.out.duration.1500ms="shown"
+    style="display: none;"
+    class="text-sm text-gray-600 mr-3">
+    Created.
+</div>
+ 
+
+             <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
+    Create
+</button>
+                    </div>
+                            </div>
+        </form>
+    </div>
+</div>
+ 
+
+    
+    <!-- Token Value Modal -->
+     <div
+    x-data="{
+        show: window.Livewire.find('RfrKvOvdpBfZb9Wa2GM9').entangle('displayingToken') ,
+        focusables() {
+            // All focusable element types...
+            let selector = 'a, button, input, textarea, select, details, [tabindex]:not([tabindex=\'-1\'])'
+
+            return [...$el.querySelectorAll(selector)]
+                // All non-disabled elements...
+                .filter(el => ! el.hasAttribute('disabled'))
+        },
+        firstFocusable() { return this.focusables()[0] },
+        lastFocusable() { return this.focusables().slice(-1)[0] },
+        nextFocusable() { return this.focusables()[this.nextFocusableIndex()] || this.firstFocusable() },
+        prevFocusable() { return this.focusables()[this.prevFocusableIndex()] || this.lastFocusable() },
+        nextFocusableIndex() { return (this.focusables().indexOf(document.activeElement) + 1) % (this.focusables().length + 1) },
+        prevFocusableIndex() { return Math.max(0, this.focusables().indexOf(document.activeElement)) -1 },
+    }"
+    x-init="$watch('show', value => {
+        if (value) {
+            document.body.classList.add('overflow-y-hidden');
+        } else {
+            document.body.classList.remove('overflow-y-hidden');
+        }
+    })"
+    x-on:close.stop="show = false"
+    x-on:keydown.escape.window="show = false"
+    x-on:keydown.tab.prevent="$event.shiftKey || nextFocusable().focus()"
+    x-on:keydown.shift.tab.prevent="prevFocusable().focus()"
+    x-show="show"
+    id="c2b2f21f3c0157c323786c80758a1304"
+    class="jetstream-modal fixed inset-0 overflow-y-auto px-4 py-6 z-50 sm:px-0"
+    style="display: none;"
+>
+    <div x-show="show" class="fixed inset-0 transform transition-all" x-on:click="show = false" x-transition:enter="ease-out duration-300"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-transition:leave="ease-in duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0">
+        <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+    </div>
+
+    <div x-show="show" class="mb-6 bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full sm:max-w-2xl sm:mx-auto"
+                    x-transition:enter="ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                    x-transition:leave="ease-in duration-200"
+                    x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                    x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
+        <div class="px-6 py-4">
+        <div class="text-lg">
+            API Token
+        </div>
+
+        <div class="mt-4">
+            <div>
+                Please copy your new API token. For your security, it won&#039;t be shown again.
+            </div>
+
+            <div class="mt-4 bg-gray-100 px-4 py-2 rounded font-mono text-sm text-gray-500">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="px-6 py-4 bg-gray-100 text-right">
+        <button type="button" class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150" wire:click="$set('displayingToken', false)" wire:loading.attr="disabled">
+    Close
+</button>
+    </div>
+    </div>
+</div>
+ 
+ 
+
+    <!-- API Token Permissions Modal -->
+     <div
+    x-data="{
+        show: window.Livewire.find('RfrKvOvdpBfZb9Wa2GM9').entangle('managingApiTokenPermissions') ,
+        focusables() {
+            // All focusable element types...
+            let selector = 'a, button, input, textarea, select, details, [tabindex]:not([tabindex=\'-1\'])'
+
+            return [...$el.querySelectorAll(selector)]
+                // All non-disabled elements...
+                .filter(el => ! el.hasAttribute('disabled'))
+        },
+        firstFocusable() { return this.focusables()[0] },
+        lastFocusable() { return this.focusables().slice(-1)[0] },
+        nextFocusable() { return this.focusables()[this.nextFocusableIndex()] || this.firstFocusable() },
+        prevFocusable() { return this.focusables()[this.prevFocusableIndex()] || this.lastFocusable() },
+        nextFocusableIndex() { return (this.focusables().indexOf(document.activeElement) + 1) % (this.focusables().length + 1) },
+        prevFocusableIndex() { return Math.max(0, this.focusables().indexOf(document.activeElement)) -1 },
+    }"
+    x-init="$watch('show', value => {
+        if (value) {
+            document.body.classList.add('overflow-y-hidden');
+        } else {
+            document.body.classList.remove('overflow-y-hidden');
+        }
+    })"
+    x-on:close.stop="show = false"
+    x-on:keydown.escape.window="show = false"
+    x-on:keydown.tab.prevent="$event.shiftKey || nextFocusable().focus()"
+    x-on:keydown.shift.tab.prevent="prevFocusable().focus()"
+    x-show="show"
+    id="62b3701bafec1829dc4403c6ddc549a3"
+    class="jetstream-modal fixed inset-0 overflow-y-auto px-4 py-6 z-50 sm:px-0"
+    style="display: none;"
+>
+    <div x-show="show" class="fixed inset-0 transform transition-all" x-on:click="show = false" x-transition:enter="ease-out duration-300"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-transition:leave="ease-in duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0">
+        <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+    </div>
+
+    <div x-show="show" class="mb-6 bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full sm:max-w-2xl sm:mx-auto"
+                    x-transition:enter="ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                    x-transition:leave="ease-in duration-200"
+                    x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                    x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
+        <div class="px-6 py-4">
+        <div class="text-lg">
+            API Token Permissions
+        </div>
+
+        <div class="mt-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <label class="flex items-center">
+                         <input type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" wire:model.defer="updateApiTokenForm.permissions" value="create">
+ 
+                        <span class="ml-2 text-sm text-gray-600">create</span>
+                    </label>
+                                    <label class="flex items-center">
+                         <input type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" wire:model.defer="updateApiTokenForm.permissions" value="delete">
+ 
+                        <span class="ml-2 text-sm text-gray-600">delete</span>
+                    </label>
+                                    <label class="flex items-center">
+                         <input type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" wire:model.defer="updateApiTokenForm.permissions" value="read">
+ 
+                        <span class="ml-2 text-sm text-gray-600">read</span>
+                    </label>
+                                    <label class="flex items-center">
+                         <input type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" wire:model.defer="updateApiTokenForm.permissions" value="update">
+ 
+                        <span class="ml-2 text-sm text-gray-600">update</span>
+                    </label>
+                            </div>
+        </div>
+    </div>
+
+    <div class="px-6 py-4 bg-gray-100 text-right">
+        <button type="button" class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150" wire:click="$set('managingApiTokenPermissions', false)" wire:loading.attr="disabled">
+    Nevermind
+</button>
+ 
+
+             <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 ml-2" wire:click="updateApiToken" wire:loading.attr="disabled">
+    Save
+</button>
+    </div>
+    </div>
+</div>
+ 
+ 
+
+    <!-- Delete Token Confirmation Modal -->
+     <div
+    x-data="{
+        show: window.Livewire.find('RfrKvOvdpBfZb9Wa2GM9').entangle('confirmingApiTokenDeletion') ,
+        focusables() {
+            // All focusable element types...
+            let selector = 'a, button, input, textarea, select, details, [tabindex]:not([tabindex=\'-1\'])'
+
+            return [...$el.querySelectorAll(selector)]
+                // All non-disabled elements...
+                .filter(el => ! el.hasAttribute('disabled'))
+        },
+        firstFocusable() { return this.focusables()[0] },
+        lastFocusable() { return this.focusables().slice(-1)[0] },
+        nextFocusable() { return this.focusables()[this.nextFocusableIndex()] || this.firstFocusable() },
+        prevFocusable() { return this.focusables()[this.prevFocusableIndex()] || this.lastFocusable() },
+        nextFocusableIndex() { return (this.focusables().indexOf(document.activeElement) + 1) % (this.focusables().length + 1) },
+        prevFocusableIndex() { return Math.max(0, this.focusables().indexOf(document.activeElement)) -1 },
+    }"
+    x-init="$watch('show', value => {
+        if (value) {
+            document.body.classList.add('overflow-y-hidden');
+        } else {
+            document.body.classList.remove('overflow-y-hidden');
+        }
+    })"
+    x-on:close.stop="show = false"
+    x-on:keydown.escape.window="show = false"
+    x-on:keydown.tab.prevent="$event.shiftKey || nextFocusable().focus()"
+    x-on:keydown.shift.tab.prevent="prevFocusable().focus()"
+    x-show="show"
+    id="c4552dc4dc29aa1ae939f3386a0c0b8b"
+    class="jetstream-modal fixed inset-0 overflow-y-auto px-4 py-6 z-50 sm:px-0"
+    style="display: none;"
+>
+    <div x-show="show" class="fixed inset-0 transform transition-all" x-on:click="show = false" x-transition:enter="ease-out duration-300"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-transition:leave="ease-in duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0">
+        <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+    </div>
+
+    <div x-show="show" class="mb-6 bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full sm:max-w-2xl sm:mx-auto"
+                    x-transition:enter="ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                    x-transition:leave="ease-in duration-200"
+                    x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                    x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
+        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+        <div class="sm:flex sm:items-start">
+            <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                <svg class="h-6 w-6 text-red-600" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+            </div>
+
+            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                <h3 class="text-lg">
+                    Delete API Token
+                </h3>
+
+                <div class="mt-2">
+                    Are you sure you would like to delete this API token?
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="px-6 py-4 bg-gray-100 text-right">
+        <button type="button" class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150" wire:click="$toggle('confirmingApiTokenDeletion')" wire:loading.attr="disabled">
+    Nevermind
+</button>
+ 
+
+             <button type="button" class="inline-flex items-center justify-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-600 transition ease-in-out duration-150 ml-2" wire:click="deleteApiToken" wire:loading.attr="disabled">
+    Delete
+</button>
+    </div>
+    </div>
+</div>
+ 
+ 
+</div>
+        </div>
+    </div>
+            </main>
+        </div>
+
+        
+        <!-- Livewire Scripts -->
+
+<script src="/livewire/livewire.js?id=eb510e851dceb24afd36" data-turbolinks-eval="false"></script>
+<script data-turbolinks-eval="false">
+    if (window.livewire) {
+        console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+    }
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'Wf8X7ZQLqYSEHtF1JpHYe4kUpjocgNyCvmxvQJ8o';
+
+    /* Make sure Livewire loads first. */
+    if (window.Alpine) {
+        /* Defer showing the warning so it doesn't get buried under downstream errors. */
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function() {
+                console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\n\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+            })
+        });
+    }
+
+    /* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+    </body>
+</html>
+ 
